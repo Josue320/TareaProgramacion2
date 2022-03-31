@@ -465,6 +465,30 @@ namespace Infraestructure.Repository
                 }
                 return -1;
             }
+
+        }
+        public int GetLastId()
+        {
+            int K = 0;
+            try
+            {
+                using (BinaryReader brHeader = new BinaryReader(HeaderStream))
+                {
+                    if (brHeader.BaseStream.Length <= 0)
+                    {
+                        return K;
+                    }
+
+                    long posh = 4;
+                    brHeader.BaseStream.Seek(posh, SeekOrigin.Begin);
+                    K = brHeader.ReadInt32();
+                    return K;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 
