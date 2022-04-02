@@ -1,4 +1,5 @@
 ﻿using AppCore.IServices;
+using practicaDepreciacion.Presentaciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,11 @@ namespace practicaDepreciacion
     public partial class Principal : Form
     {
         private IActivoServices activoServices;
-
-        public Principal(IActivoServices ActivoServices)
+        private IEmpleadoService empleadoService;
+        public Principal(IActivoServices ActivoServices, IEmpleadoService EmpleadoService)
         {
             this.activoServices = ActivoServices;
+            this.empleadoService = EmpleadoService;
             InitializeComponent();
         }
 
@@ -45,12 +47,24 @@ namespace practicaDepreciacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Diseñado por:\nJosue Omar Flores Diaz\njosue.flores68u@std.uni.edu.ni\nKevin Francisco Canales Laynes\nkcanales3003@gmail.com","Acerca de",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Diseñado por:\nJosue Omar Flores Diaz\njosue.flores68u@std.uni.edu.ni\nKevin Francisco Canales Laynes\nkcanales3003@gmail.com", "Acerca de", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnRegistroEmpleado_Click(object sender, EventArgs e)
+        {
+
+            AddFormInPanel(new FrmEmpleados(empleadoService));
+        }
+
+        private void btnRegistroEmpleado_Click_1(object sender, EventArgs e)
+        {
+            AddFormInPanel(new FrmEmpleados(empleadoService));
+
         }
     }
 }

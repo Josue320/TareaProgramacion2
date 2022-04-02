@@ -56,9 +56,6 @@
     <Compile Include="Services\EmpleadoServices.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{74d1b8f5-415a-465b-84d6-0032e14ce8d2}</Project>
       <Name>Domain</Name>
@@ -67,6 +64,9 @@
       <Project>{c89aef0d-77ac-4863-a486-8e47d5b7e541}</Project>
       <Name>Infraestructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

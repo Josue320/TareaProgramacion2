@@ -17,7 +17,7 @@ namespace practicaDepreciacion
     {
         IActivoServices activoServices;
         private int idSeleccionado;
-       
+
         public FrmDepreciacion2(IActivoServices ActivoServices)
         {
             this.activoServices = ActivoServices;
@@ -35,13 +35,14 @@ namespace practicaDepreciacion
             else
             {
 
+                EstadoActivo conversion = (EstadoActivo)cmbEstado.SelectedIndex;
                 Activo activo = new Activo()
                 {
                     Nombre = txtNombre.Text,
                     Valor = ((double)nudValor.Value),
                     ValorResidual = ((double)nudValorResidual.Value),
                     VidaUtil = ((int)nudVidaUtil.Value),
-                    Estado = (EstadoActivo)cmbEstado.SelectedIndex
+                    Estado = conversion.ToString(),
                 };
                 activoServices.Add(activo);
                 dataGridView1.DataSource = null;
@@ -54,12 +55,13 @@ namespace practicaDepreciacion
 
         private bool verificar()
         {
-            if (String.IsNullOrEmpty(txtNombre.Text))
+            if (String.IsNullOrEmpty(txtNombre.Text) || cmbEstado.SelectedIndex.Equals(-1))
             {
 
                 return false;
             }
             return true;
+
         }
 
         private void limpiar()
@@ -72,9 +74,9 @@ namespace practicaDepreciacion
 
         private void FrmDepreciacion2_Load(object sender, EventArgs e)
         {
-            
-            
-            
+
+
+
             dataGridView1.DataSource = activoServices.Read();
         }
 
@@ -84,7 +86,7 @@ namespace practicaDepreciacion
             {
                 FrmDepreciar depreciacion = new FrmDepreciar(activoServices.Read()[e.RowIndex], activoServices);
                 depreciacion.ShowDialog();
-                
+
             }
         }
 
@@ -121,7 +123,7 @@ namespace practicaDepreciacion
         {
             idSeleccionado = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
             MessageBox.Show(idSeleccionado.ToString());
-          
+
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -223,7 +225,7 @@ namespace practicaDepreciacion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
