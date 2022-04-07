@@ -42,7 +42,7 @@ namespace practicaDepreciacion
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            AddFormInPanel(new FrmDepreciacion2(activoServices));
+            AddFormInPanel(new FrmDepreciacion2(activoServices,empleadoService));
         }
 
         private void button2_Click(object sender, EventArgs e)

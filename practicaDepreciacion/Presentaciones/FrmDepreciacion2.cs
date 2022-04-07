@@ -16,18 +16,23 @@ namespace practicaDepreciacion
     public partial class FrmDepreciacion2 : Form
     {
         IActivoServices activoServices;
+        IEmpleadoService empleadoService;
         private int idSeleccionado;
 
-        public FrmDepreciacion2(IActivoServices ActivoServices)
+        public FrmDepreciacion2(IActivoServices ActivoServices, IEmpleadoService EmpleadoService)
         {
             this.activoServices = ActivoServices;
+            this.empleadoService = EmpleadoService;
             InitializeComponent();
+
             cmbEstado.Items.AddRange(Enum.GetValues(typeof(EstadoActivo)).Cast<object>().ToArray());
+            AgregarEmpleado();
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
             bool verificado = verificar();
+            //int id = cmbEmpleado.SelectedItem
             if (verificado == false)
             {
                 MessageBox.Show("Tienes que llenar todos los formularios.");
@@ -42,7 +47,7 @@ namespace practicaDepreciacion
                     Valor = ((double)nudValor.Value),
                     ValorResidual = ((double)nudValorResidual.Value),
                     VidaUtil = ((int)nudVidaUtil.Value),
-                    Estado = conversion.ToString(),
+                    Estado = conversion.ToString()
                 };
                 activoServices.Add(activo);
                 dataGridView1.DataSource = null;
@@ -223,9 +228,23 @@ namespace practicaDepreciacion
 
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        public void AgregarEmpleado()
         {
-
+            List<Empleado> empleados = empleadoService.Read();
+            List<int> Ids = new List<int>();
+            foreach (Empleado emp in empleados)
+            {
+                cmbEmpleado.Items.Add(emp.Nombres);
+                Ids.Add(emp.Id);
+            }
         }
+
+        //public Empleado ObtenerEmpleado()
+        //{
+
+        //}
+
+      
+        
     }
 }

@@ -133,7 +133,7 @@ namespace Infraestructure.Repository
             try
             {
                 T newValue = (T)Activator.CreateInstance(typeof(T));
-                int indiceID = BusquedaId(id);
+                int indiceID = BusquedaBinaria(id);
                 int n = 0, k = 0, index;
                 using (BinaryReader brHeader = new BinaryReader(HeaderStream),
                                     brData = new BinaryReader(DataStream))
@@ -313,7 +313,7 @@ namespace Infraestructure.Repository
             {
 
                 id = (int)t.GetType().GetProperty("Id").GetValue(t);
-                int index = BusquedaId(id);
+                int index = BusquedaBinaria(id);
                 if (index < 0)
                 {
                     throw new ArgumentException($"No se encontro un objeto con el Id: {id}");
@@ -384,7 +384,7 @@ namespace Infraestructure.Repository
             {
 
                 int id = (int)t.GetType().GetProperty("Id").GetValue(t);
-                int index = BusquedaId(id);
+                int index = BusquedaBinaria(id);
                 if (id < 0)
                 {
                    
@@ -434,7 +434,7 @@ namespace Infraestructure.Repository
         }
 
 
-        private int BusquedaId(int dato)
+        private int BusquedaBinaria(int dato)
         {
             using (BinaryReader brHeader = new BinaryReader(HeaderStream))
             {
