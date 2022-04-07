@@ -66,6 +66,6 @@ namespace practicaDepreciacion
             AddFormInPanel(new FrmEmpleados(empleadoService));
 
         }
-        //
+        
     }
 }
