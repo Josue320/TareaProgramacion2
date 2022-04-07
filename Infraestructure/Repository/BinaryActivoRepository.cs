@@ -79,6 +79,10 @@ namespace Infraestructure.Repository
             }
         }
 
+        public void AsignarActivo(Activo a, Empleado b)
+        {
+            a.Empleado = b;
+        }
 
       
     }

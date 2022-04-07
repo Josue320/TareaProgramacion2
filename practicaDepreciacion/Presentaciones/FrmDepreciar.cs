@@ -25,6 +25,7 @@ namespace practicaDepreciacion
             this.activoServices = activoServices;
             InitializeComponent();
             cmbMetodo.Items.AddRange(Enum.GetValues(typeof(Depreciacion)).Cast<object>().ToArray());
+            cmbEstado.Items.AddRange(Enum.GetValues(typeof(EstadoActivo)).Cast<object>().ToArray());
         }
 
         private void cmbMetodo_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,6 +54,7 @@ namespace practicaDepreciacion
         {
 
             bool verificado = verificar();
+            EstadoActivo conversion = (EstadoActivo)cmbEstado.SelectedIndex;
             if (verificado == false)
             {
                 MessageBox.Show("Tienes que llenar todos los formularios.");
@@ -63,7 +65,9 @@ namespace practicaDepreciacion
                 Valor = ((double)nudValor.Value),
                 ValorResidual = ((double)nudValorResidual.Value),
                 VidaUtil = ((int)nudVidaUtil.Value),
-                Id = activo.Id
+                Id = activo.Id,
+                Estado = conversion.ToString(),
+
             };
             activoServices.Update(activo2);
             MessageBox.Show("El update ha sido realizado con exito");

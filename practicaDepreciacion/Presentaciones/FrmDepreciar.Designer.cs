@@ -42,6 +42,8 @@ namespace practicaDepreciacion
             this.lblValorResidual = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudVidaUtil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValorResidual)).BeginInit();
@@ -79,6 +81,8 @@ namespace practicaDepreciacion
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbEstado);
+            this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.nudVidaUtil);
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.nudValorResidual);
@@ -173,6 +177,24 @@ namespace practicaDepreciacion
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(35, 153);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(40, 13);
+            this.lblEstado.TabIndex = 8;
+            this.lblEstado.Text = "Estado";
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(134, 150);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstado.TabIndex = 9;
+            // 
             // FrmDepreciar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,5 +233,7 @@ namespace practicaDepreciacion
         private System.Windows.Forms.Label lblValorResidual;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Label lblEstado;
     }
 }
