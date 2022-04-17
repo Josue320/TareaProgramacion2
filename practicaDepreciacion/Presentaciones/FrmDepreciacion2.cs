@@ -20,6 +20,7 @@ namespace practicaDepreciacion
         private int idSeleccionado;
        
 
+
         public FrmDepreciacion2(IActivoServices ActivoServices, IEmpleadoService EmpleadoService)
         {
             this.activoServices = ActivoServices;
@@ -28,12 +29,15 @@ namespace practicaDepreciacion
             
             cmbEstado.Items.AddRange(Enum.GetValues(typeof(EstadoActivo)).Cast<object>().ToArray());
             AgregarEmpleado();
+
+
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
             bool verificado = verificar();
-            //int id = cmbEmpleado.SelectedItem
+            List<Empleado> empleados = empleadoService.Read();
+            int id = (int)cmbEmpleado.SelectedIndex;
             if (verificado == false)
             {
                 MessageBox.Show("Tienes que llenar todos los formularios.");
@@ -49,8 +53,8 @@ namespace practicaDepreciacion
                     ValorResidual = ((double)nudValorResidual.Value),
                     VidaUtil = ((int)nudVidaUtil.Value),
                     Estado = conversion.ToString(),
-                    Empleado = (Empleado)cmbEmpleado.SelectedItem
-                };
+                    Empleado =empleados[id]
+                }; 
                 activoServices.Add(activo);
                 dataGridView1.DataSource = null;
                 limpiar();
@@ -232,10 +236,10 @@ namespace practicaDepreciacion
 
         public void AgregarEmpleado()
         {
-            List<Empleado> empleados = empleadoService.Read();
+             List<Empleado> empleados = empleadoService.Read();
             foreach (Empleado emp in empleados)
             {
-                cmbEmpleado.Items.Add(emp);
+                cmbEmpleado.Items.Add(emp.Nombres +" "+emp.Apellidos);
             }
         }
 
