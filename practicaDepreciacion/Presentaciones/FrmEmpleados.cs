@@ -212,5 +212,10 @@ namespace practicaDepreciacion.Presentaciones
 
             }
         }
+
+        private void FrmEmpleados_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = empleadoService.Read();
+        }
     }
 }

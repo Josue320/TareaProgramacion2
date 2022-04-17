@@ -18,15 +18,16 @@ namespace practicaDepreciacion
         IActivoServices activoServices;
         IEmpleadoService empleadoService;
         private int idSeleccionado;
+       
 
         public FrmDepreciacion2(IActivoServices ActivoServices, IEmpleadoService EmpleadoService)
         {
             this.activoServices = ActivoServices;
             this.empleadoService = EmpleadoService;
             InitializeComponent();
-
+            List<Empleado> empleados = empleadoService.Read();
             cmbEstado.Items.AddRange(Enum.GetValues(typeof(EstadoActivo)).Cast<object>().ToArray());
-            AgregarEmpleado();
+            cmbEmpleado.Items.Add(empleados);
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
@@ -228,16 +229,7 @@ namespace practicaDepreciacion
 
         }
 
-        public void AgregarEmpleado()
-        {
-            List<Empleado> empleados = empleadoService.Read();
-            List<int> Ids = new List<int>();
-            foreach (Empleado emp in empleados)
-            {
-                cmbEmpleado.Items.Add(emp.Nombres);
-                Ids.Add(emp.Id);
-            }
-        }
+      
 
         //public Empleado ObtenerEmpleado()
         //{
