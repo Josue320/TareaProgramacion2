@@ -120,14 +120,7 @@ namespace practicaDepreciacion.Presentaciones
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (Char.IsDigit(e.KeyChar))
-            {
-
-                e.Handled = true;
-                lblCedula.ForeColor = Color.Red;
-
-            }
-            else if (String.IsNullOrEmpty(txtCedula.Text))
+         if (String.IsNullOrEmpty(txtCedula.Text))
             {
 
                 lblCedula.ForeColor = Color.Black;
@@ -168,14 +161,7 @@ namespace practicaDepreciacion.Presentaciones
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (Char.IsDigit(e.KeyChar))
-            {
-
-                e.Handled = true;
-                lblTelefono.ForeColor = Color.Red;
-
-            }
-            else if (String.IsNullOrEmpty(txtTelefono.Text))
+             if (String.IsNullOrEmpty(txtTelefono.Text))
             {
 
                 lblTelefono.ForeColor = Color.Black;
@@ -192,14 +178,7 @@ namespace practicaDepreciacion.Presentaciones
         private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (Char.IsDigit(e.KeyChar))
-            {
-
-                e.Handled = true;
-                lblEmail.ForeColor = Color.Red;
-
-            }
-            else if (String.IsNullOrEmpty(txtEmail.Text))
+            if (String.IsNullOrEmpty(txtEmail.Text))
             {
 
                 lblEmail.ForeColor = Color.Black;

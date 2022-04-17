@@ -25,9 +25,9 @@ namespace practicaDepreciacion
             this.activoServices = ActivoServices;
             this.empleadoService = EmpleadoService;
             InitializeComponent();
-            List<Empleado> empleados = empleadoService.Read();
+            
             cmbEstado.Items.AddRange(Enum.GetValues(typeof(EstadoActivo)).Cast<object>().ToArray());
-            cmbEmpleado.Items.Add(empleados);
+            AgregarEmpleado();
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
@@ -48,7 +48,8 @@ namespace practicaDepreciacion
                     Valor = ((double)nudValor.Value),
                     ValorResidual = ((double)nudValorResidual.Value),
                     VidaUtil = ((int)nudVidaUtil.Value),
-                    Estado = conversion.ToString()
+                    Estado = conversion.ToString(),
+                    Empleado = (Empleado)cmbEmpleado.SelectedItem
                 };
                 activoServices.Add(activo);
                 dataGridView1.DataSource = null;
@@ -229,14 +230,23 @@ namespace practicaDepreciacion
 
         }
 
-      
+        public void AgregarEmpleado()
+        {
+            List<Empleado> empleados = empleadoService.Read();
+            foreach (Empleado emp in empleados)
+            {
+                cmbEmpleado.Items.Add(emp);
+            }
+        }
+
+
 
         //public Empleado ObtenerEmpleado()
         //{
 
         //}
 
-      
-        
+
+
     }
 }
