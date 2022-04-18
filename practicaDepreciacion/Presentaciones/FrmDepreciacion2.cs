@@ -96,8 +96,7 @@ namespace practicaDepreciacion
             this.nudValor.Value = 0;
             this.nudValorResidual.Value = 0;
             this.nudVidaUtil.Value = 1;
-            this.cmbEmpleado.Items.Clear();
-            this.cmbEstado.Items.Clear();
+            
         }
 
         private void FrmDepreciacion2_Load(object sender, EventArgs e)
