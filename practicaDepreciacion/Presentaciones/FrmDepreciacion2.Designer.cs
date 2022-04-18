@@ -30,6 +30,8 @@ namespace practicaDepreciacion
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.lblEmpleado = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.btnCrear = new System.Windows.Forms.Button();
@@ -44,8 +46,6 @@ namespace practicaDepreciacion
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnRecargar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
-            this.lblEmpleado = new System.Windows.Forms.Label();
-            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudVidaUtil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValorResidual)).BeginInit();
@@ -76,6 +76,24 @@ namespace practicaDepreciacion
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crear Activo";
+            // 
+            // cmbEmpleado
+            // 
+            this.cmbEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Location = new System.Drawing.Point(76, 171);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(103, 21);
+            this.cmbEmpleado.TabIndex = 12;
+            // 
+            // lblEmpleado
+            // 
+            this.lblEmpleado.AutoSize = true;
+            this.lblEmpleado.Location = new System.Drawing.Point(8, 174);
+            this.lblEmpleado.Name = "lblEmpleado";
+            this.lblEmpleado.Size = new System.Drawing.Size(40, 13);
+            this.lblEmpleado.TabIndex = 11;
+            this.lblEmpleado.Text = "Empleado";
             // 
             // cmbEstado
             // 
@@ -235,23 +253,6 @@ namespace practicaDepreciacion
             this.btneliminar.Text = "Delete";
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            // 
-            // lblEmpleado
-            // 
-            this.lblEmpleado.AutoSize = true;
-            this.lblEmpleado.Location = new System.Drawing.Point(8, 174);
-            this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(40, 13);
-            this.lblEmpleado.TabIndex = 11;
-            this.lblEmpleado.Text = "Empleado";
-            // 
-            // cmbEmpleado
-            // 
-            this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(76, 171);
-            this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(103, 21);
-            this.cmbEmpleado.TabIndex = 12;
             // 
             // FrmDepreciacion2
             // 

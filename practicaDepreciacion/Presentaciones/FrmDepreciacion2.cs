@@ -73,6 +73,8 @@ namespace practicaDepreciacion
                 }
                 dataGridView1.DataSource = null;
                 limpiar();
+                AgregarEmpleado();
+                cmbEstado.Items.AddRange(Enum.GetValues(typeof(EstadoActivo)).Cast<object>().ToArray());
                 dataGridView1.DataSource = activoServices.Read();
 
             }
@@ -96,7 +98,8 @@ namespace practicaDepreciacion
             this.nudValor.Value = 0;
             this.nudValorResidual.Value = 0;
             this.nudVidaUtil.Value = 1;
-            
+            this.cmbEstado.Items.Clear();
+            this.cmbEmpleado.Items.Clear();
         }
 
         private void FrmDepreciacion2_Load(object sender, EventArgs e)
