@@ -7,7 +7,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,10 +28,19 @@ namespace practicaDepreciacion.Presentaciones
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             bool verificado = verificar();
+
             if (verificado == false)
             {
                 MessageBox.Show("Tienes que llenar todos los formularios.");
+
             }
+            else if (validaremail(txtEmail.Text)==false)
+            {
+                //lblEmail.ForeColor = Color.Red;
+                MessageBox.Show("Dirrecion de correo invalida debe contener el formato nombre@dominio.com");
+            }
+           
+
             else
             {
 
@@ -160,8 +171,14 @@ namespace practicaDepreciacion.Presentaciones
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (Char.IsLetter(e.KeyChar))
+            {
 
-             if (String.IsNullOrEmpty(txtTelefono.Text))
+                e.Handled = true;
+                lblTelefono.ForeColor = Color.Red;
+
+            }
+            else if (String.IsNullOrEmpty(txtTelefono.Text))
             {
 
                 lblTelefono.ForeColor = Color.Black;
@@ -173,23 +190,65 @@ namespace practicaDepreciacion.Presentaciones
                 lblTelefono.ForeColor = Color.Green;
 
             }
+
+
+
         }
-
-        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        private Boolean validaremail (String email)
         {
-
-            if (String.IsNullOrEmpty(txtEmail.Text))
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
             {
-
-                lblEmail.ForeColor = Color.Black;
-
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                { return true; }
+                else { return false; }
             }
             else
             {
-
-                lblEmail.ForeColor = Color.Green;
-
+                return false;
             }
+
+            //if (Regex.IsMatch(email, expresion))
+            //{
+            //    if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+        }
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //new EmailAddressAttribute().IsValid(ema
+         
+            //if (validaremail(txtEmail.Text))
+            //{
+            //    lblEmail.ForeColor = Color.Green;
+
+
+
+            //}
+            ////else if (String.IsNullOrEmpty(txtEmail.Text))
+            ////{
+
+            ////    lblEmail.ForeColor = Color.Black;
+
+            ////}
+            //else
+            //{
+            //    //lblEmail.ForeColor = Color.Red;
+            //    MessageBox.Show("Dirrecion de correo invalida debe contener el formato nombre@dominio.com");
+
+            //}
+
         }
 
         private void FrmEmpleados_Load(object sender, EventArgs e)
