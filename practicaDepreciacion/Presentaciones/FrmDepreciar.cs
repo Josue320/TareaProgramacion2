@@ -19,13 +19,16 @@ namespace practicaDepreciacion
     {
         private Activo activo;
         IActivoServices activoServices;
-        public FrmDepreciar(Activo Activo, IActivoServices activoServices)
+        IEmpleadoService empleadoService;
+        public FrmDepreciar(Activo Activo, IActivoServices activoServices, IEmpleadoService empleadoService)
         {
             this.activo = Activo;
             this.activoServices = activoServices;
+            this.empleadoService = empleadoService;
             InitializeComponent();
             cmbMetodo.Items.AddRange(Enum.GetValues(typeof(Depreciacion)).Cast<object>().ToArray());
             cmbEstado.Items.AddRange(Enum.GetValues(typeof(EstadoActivo)).Cast<object>().ToArray());
+            AgregarEmpleado();
         }
 
         private void cmbMetodo_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,21 +58,37 @@ namespace practicaDepreciacion
 
             bool verificado = verificar();
             EstadoActivo conversion = (EstadoActivo)cmbEstado.SelectedIndex;
+            List<Empleado> empleados = empleadoService.Read();
+            int id = (int)cmbEmpleado.SelectedIndex;
             if (verificado == false)
             {
                 MessageBox.Show("Tienes que llenar todos los formularios.");
             }
-            Activo activo2 = new Activo()
+            if (id == -1)
             {
-                Nombre = txtNombre.Text,
-                Valor = ((double)nudValor.Value),
-                ValorResidual = ((double)nudValorResidual.Value),
-                VidaUtil = ((int)nudVidaUtil.Value),
-                Id = activo.Id,
-                Estado = conversion.ToString(),
-
-            };
-            activoServices.Update(activo2);
+                Activo activo = new Activo()
+                {
+                    Nombre = txtNombre.Text,
+                    Valor = ((double)nudValor.Value),
+                    ValorResidual = ((double)nudValorResidual.Value),
+                    VidaUtil = ((int)nudVidaUtil.Value),
+                    Estado = conversion.ToString()
+                };
+                activoServices.Add(activo);
+            }
+            else
+            {
+                Activo activo = new Activo()
+                {
+                    Nombre = txtNombre.Text,
+                    Valor = ((double)nudValor.Value),
+                    ValorResidual = ((double)nudValorResidual.Value),
+                    VidaUtil = ((int)nudVidaUtil.Value),
+                    Estado = conversion.ToString(),
+                    Empleado = empleados[id]
+                };
+                activoServices.Add(activo);
+            }
             MessageBox.Show("El update ha sido realizado con exito");
             this.Close();
         }
@@ -180,6 +199,16 @@ namespace practicaDepreciacion
             }
 
         }
+
+        public void AgregarEmpleado()
+        {
+            List<Empleado> empleados = empleadoService.Read();
+            foreach (Empleado emp in empleados)
+            {
+                cmbEmpleado.Items.Add(emp.Nombres + " " + emp.Apellidos);
+            }
+        }
+
     }
 
 }

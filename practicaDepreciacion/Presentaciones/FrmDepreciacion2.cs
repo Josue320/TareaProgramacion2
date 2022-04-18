@@ -46,16 +46,31 @@ namespace practicaDepreciacion
             {
 
                 EstadoActivo conversion = (EstadoActivo)cmbEstado.SelectedIndex;
-                Activo activo = new Activo()
+                if (id == -1)
                 {
-                    Nombre = txtNombre.Text,
-                    Valor = ((double)nudValor.Value),
-                    ValorResidual = ((double)nudValorResidual.Value),
-                    VidaUtil = ((int)nudVidaUtil.Value),
-                    Estado = conversion.ToString(),
-                    Empleado =empleados[id]
-                }; 
-                activoServices.Add(activo);
+                    Activo activo = new Activo()
+                    {
+                        Nombre = txtNombre.Text,
+                        Valor = ((double)nudValor.Value),
+                        ValorResidual = ((double)nudValorResidual.Value),
+                        VidaUtil = ((int)nudVidaUtil.Value),
+                        Estado = conversion.ToString()
+                    };
+                    activoServices.Add(activo);
+                }
+                else
+                {
+                    Activo activo = new Activo()
+                    {
+                        Nombre = txtNombre.Text,
+                        Valor = ((double)nudValor.Value),
+                        ValorResidual = ((double)nudValorResidual.Value),
+                        VidaUtil = ((int)nudVidaUtil.Value),
+                        Estado = conversion.ToString(),
+                        Empleado = empleados[id]
+                    };
+                    activoServices.Add(activo);
+                }
                 dataGridView1.DataSource = null;
                 limpiar();
                 dataGridView1.DataSource = activoServices.Read();
@@ -81,13 +96,12 @@ namespace practicaDepreciacion
             this.nudValor.Value = 0;
             this.nudValorResidual.Value = 0;
             this.nudVidaUtil.Value = 1;
+            this.cmbEmpleado.Items.Clear();
+            this.cmbEstado.Items.Clear();
         }
 
         private void FrmDepreciacion2_Load(object sender, EventArgs e)
         {
-
-
-
             dataGridView1.DataSource = activoServices.Read();
         }
 
@@ -95,7 +109,7 @@ namespace practicaDepreciacion
         {
             if (e.RowIndex >= 0)
             {
-                FrmDepreciar depreciacion = new FrmDepreciar(activoServices.Read()[e.RowIndex], activoServices);
+                FrmDepreciar depreciacion = new FrmDepreciar(activoServices.Read()[e.RowIndex], activoServices, empleadoService);
                 depreciacion.ShowDialog();
 
             }
@@ -242,13 +256,6 @@ namespace practicaDepreciacion
                 cmbEmpleado.Items.Add(emp.Nombres +" "+emp.Apellidos);
             }
         }
-
-
-
-        //public Empleado ObtenerEmpleado()
-        //{
-
-        //}
 
 
 

@@ -33,6 +33,8 @@ namespace practicaDepreciacion
             this.cmbMetodo = new System.Windows.Forms.ComboBox();
             this.lblMetodo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.nudVidaUtil = new System.Windows.Forms.NumericUpDown();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.nudValorResidual = new System.Windows.Forms.NumericUpDown();
@@ -42,8 +44,8 @@ namespace practicaDepreciacion
             this.lblValorResidual = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.lblEmpleado = new System.Windows.Forms.Label();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudVidaUtil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudValorResidual)).BeginInit();
@@ -81,10 +83,11 @@ namespace practicaDepreciacion
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbEmpleado);
+            this.groupBox1.Controls.Add(this.lblEmpleado);
             this.groupBox1.Controls.Add(this.cmbEstado);
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.nudVidaUtil);
-            this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.nudValorResidual);
             this.groupBox1.Controls.Add(this.nudValor);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -94,10 +97,28 @@ namespace practicaDepreciacion
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Location = new System.Drawing.Point(474, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(279, 215);
+            this.groupBox1.Size = new System.Drawing.Size(279, 230);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update";
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(134, 150);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstado.TabIndex = 9;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(35, 153);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(40, 13);
+            this.lblEstado.TabIndex = 8;
+            this.lblEstado.Text = "Estado";
             // 
             // nudVidaUtil
             // 
@@ -109,7 +130,7 @@ namespace practicaDepreciacion
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(35, 186);
+            this.btnUpdate.Location = new System.Drawing.Point(506, 295);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 3;
@@ -177,23 +198,22 @@ namespace practicaDepreciacion
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             // 
-            // lblEstado
+            // lblEmpleado
             // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(35, 153);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(40, 13);
-            this.lblEstado.TabIndex = 8;
-            this.lblEstado.Text = "Estado";
+            this.lblEmpleado.AutoSize = true;
+            this.lblEmpleado.Location = new System.Drawing.Point(35, 180);
+            this.lblEmpleado.Name = "lblEmpleado";
+            this.lblEmpleado.Size = new System.Drawing.Size(54, 13);
+            this.lblEmpleado.TabIndex = 10;
+            this.lblEmpleado.Text = "Empleado";
             // 
-            // cmbEstado
+            // cmbEmpleado
             // 
-            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(134, 150);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
-            this.cmbEstado.TabIndex = 9;
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Location = new System.Drawing.Point(134, 177);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEmpleado.TabIndex = 11;
             // 
             // FrmDepreciar
             // 
@@ -204,6 +224,7 @@ namespace practicaDepreciacion
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblMetodo);
             this.Controls.Add(this.cmbMetodo);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.rtbDatos);
             this.Name = "FrmDepreciar";
             this.Text = "FrmDepreciar";
@@ -235,5 +256,7 @@ namespace practicaDepreciacion
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.ComboBox cmbEmpleado;
+        private System.Windows.Forms.Label lblEmpleado;
     }
 }
