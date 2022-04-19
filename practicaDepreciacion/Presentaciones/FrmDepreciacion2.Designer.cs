@@ -68,11 +68,12 @@ namespace practicaDepreciacion
             this.groupBox1.Controls.Add(this.lblValorResidual);
             this.groupBox1.Controls.Add(this.lblValor);
             this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Location = new System.Drawing.Point(11, 12);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(50, 50);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Size = new System.Drawing.Size(193, 230);
+            this.groupBox1.Size = new System.Drawing.Size(289, 322);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crear Activo";
@@ -81,17 +82,19 @@ namespace practicaDepreciacion
             // 
             this.cmbEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(76, 171);
+            this.cmbEmpleado.Location = new System.Drawing.Point(114, 210);
+            this.cmbEmpleado.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(103, 21);
+            this.cmbEmpleado.Size = new System.Drawing.Size(153, 24);
             this.cmbEmpleado.TabIndex = 12;
             // 
             // lblEmpleado
             // 
             this.lblEmpleado.AutoSize = true;
-            this.lblEmpleado.Location = new System.Drawing.Point(8, 174);
+            this.lblEmpleado.Location = new System.Drawing.Point(12, 214);
+            this.lblEmpleado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblEmpleado.Name = "lblEmpleado";
-            this.lblEmpleado.Size = new System.Drawing.Size(40, 13);
+            this.lblEmpleado.Size = new System.Drawing.Size(55, 16);
             this.lblEmpleado.TabIndex = 11;
             this.lblEmpleado.Text = "Empleado";
             // 
@@ -99,26 +102,29 @@ namespace practicaDepreciacion
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(76, 141);
+            this.cmbEstado.Location = new System.Drawing.Point(114, 174);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(103, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(153, 24);
             this.cmbEstado.TabIndex = 10;
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(5, 144);
+            this.lblEstado.Location = new System.Drawing.Point(7, 177);
+            this.lblEstado.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(30, 13);
+            this.lblEstado.Size = new System.Drawing.Size(40, 16);
             this.lblEstado.TabIndex = 9;
             this.lblEstado.Text = "Estado";
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(61, 198);
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrear.Location = new System.Drawing.Point(17, 281);
             this.btnCrear.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(50, 23);
+            this.btnCrear.Size = new System.Drawing.Size(252, 29);
             this.btnCrear.TabIndex = 8;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = true;
@@ -126,7 +132,7 @@ namespace practicaDepreciacion
             // 
             // nudVidaUtil
             // 
-            this.nudVidaUtil.Location = new System.Drawing.Point(76, 118);
+            this.nudVidaUtil.Location = new System.Drawing.Point(114, 145);
             this.nudVidaUtil.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudVidaUtil.Maximum = new decimal(new int[] {
             5,
@@ -134,7 +140,7 @@ namespace practicaDepreciacion
             0,
             0});
             this.nudVidaUtil.Name = "nudVidaUtil";
-            this.nudVidaUtil.Size = new System.Drawing.Size(103, 18);
+            this.nudVidaUtil.Size = new System.Drawing.Size(155, 22);
             this.nudVidaUtil.TabIndex = 7;
             this.nudVidaUtil.Value = new decimal(new int[] {
             1,
@@ -145,7 +151,7 @@ namespace practicaDepreciacion
             // 
             // nudValorResidual
             // 
-            this.nudValorResidual.Location = new System.Drawing.Point(76, 92);
+            this.nudValorResidual.Location = new System.Drawing.Point(114, 113);
             this.nudValorResidual.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudValorResidual.Maximum = new decimal(new int[] {
             100000,
@@ -153,13 +159,13 @@ namespace practicaDepreciacion
             0,
             0});
             this.nudValorResidual.Name = "nudValorResidual";
-            this.nudValorResidual.Size = new System.Drawing.Size(103, 18);
+            this.nudValorResidual.Size = new System.Drawing.Size(155, 22);
             this.nudValorResidual.TabIndex = 6;
             this.nudValorResidual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudValorResidual_KeyPress);
             // 
             // nudValor
             // 
-            this.nudValor.Location = new System.Drawing.Point(76, 66);
+            this.nudValor.Location = new System.Drawing.Point(114, 81);
             this.nudValor.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudValor.Maximum = new decimal(new int[] {
             100000,
@@ -167,55 +173,55 @@ namespace practicaDepreciacion
             0,
             0});
             this.nudValor.Name = "nudValor";
-            this.nudValor.Size = new System.Drawing.Size(103, 18);
+            this.nudValor.Size = new System.Drawing.Size(155, 22);
             this.nudValor.TabIndex = 5;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(76, 40);
+            this.txtNombre.Location = new System.Drawing.Point(114, 49);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(103, 18);
+            this.txtNombre.Size = new System.Drawing.Size(153, 22);
             this.txtNombre.TabIndex = 4;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // lblVidaUtil
             // 
             this.lblVidaUtil.AutoSize = true;
-            this.lblVidaUtil.Location = new System.Drawing.Point(5, 120);
+            this.lblVidaUtil.Location = new System.Drawing.Point(7, 147);
             this.lblVidaUtil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVidaUtil.Name = "lblVidaUtil";
-            this.lblVidaUtil.Size = new System.Drawing.Size(37, 13);
+            this.lblVidaUtil.Size = new System.Drawing.Size(49, 16);
             this.lblVidaUtil.TabIndex = 3;
             this.lblVidaUtil.Text = "Vida Util:";
             // 
             // lblValorResidual
             // 
             this.lblValorResidual.AutoSize = true;
-            this.lblValorResidual.Location = new System.Drawing.Point(5, 94);
+            this.lblValorResidual.Location = new System.Drawing.Point(7, 115);
             this.lblValorResidual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorResidual.Name = "lblValorResidual";
-            this.lblValorResidual.Size = new System.Drawing.Size(57, 13);
+            this.lblValorResidual.Size = new System.Drawing.Size(80, 16);
             this.lblValorResidual.TabIndex = 2;
             this.lblValorResidual.Text = "Valor Residual:";
             // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(5, 68);
+            this.lblValor.Location = new System.Drawing.Point(7, 83);
             this.lblValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(26, 13);
+            this.lblValor.Size = new System.Drawing.Size(36, 16);
             this.lblValor.TabIndex = 1;
             this.lblValor.Text = "Valor:";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(4, 43);
+            this.lblNombre.Location = new System.Drawing.Point(6, 53);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(34, 13);
+            this.lblNombre.Size = new System.Drawing.Size(49, 16);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -224,20 +230,21 @@ namespace practicaDepreciacion
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(208, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(382, 50);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(385, 221);
+            this.dataGridView1.Size = new System.Drawing.Size(310, 322);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnRecargar
             // 
-            this.btnRecargar.Location = new System.Drawing.Point(440, 328);
+            this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecargar.Location = new System.Drawing.Point(540, 412);
             this.btnRecargar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnRecargar.Name = "btnRecargar";
-            this.btnRecargar.Size = new System.Drawing.Size(50, 23);
+            this.btnRecargar.Size = new System.Drawing.Size(74, 29);
             this.btnRecargar.TabIndex = 5;
             this.btnRecargar.Text = "Recargar";
             this.btnRecargar.UseVisualStyleBackColor = true;
@@ -245,10 +252,11 @@ namespace practicaDepreciacion
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(260, 328);
+            this.btneliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btneliminar.Location = new System.Drawing.Point(617, 412);
             this.btneliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(50, 23);
+            this.btneliminar.Size = new System.Drawing.Size(74, 29);
             this.btneliminar.TabIndex = 11;
             this.btneliminar.Text = "Delete";
             this.btneliminar.UseVisualStyleBackColor = true;
@@ -256,16 +264,17 @@ namespace practicaDepreciacion
             // 
             // FrmDepreciacion2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(4F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(604, 375);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(738, 453);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btnRecargar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Arial Narrow", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MinimumSize = new System.Drawing.Size(754, 492);
             this.Name = "FrmDepreciacion2";
             this.Text = "FrmDepreciacion2";
             this.Load += new System.EventHandler(this.FrmDepreciacion2_Load);

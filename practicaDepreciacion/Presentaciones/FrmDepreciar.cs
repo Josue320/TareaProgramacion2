@@ -209,6 +209,10 @@ namespace practicaDepreciacion
             }
         }
 
+        private void FrmDepreciar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
