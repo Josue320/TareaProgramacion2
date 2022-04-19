@@ -75,6 +75,7 @@ namespace practicaDepreciacion
             // lblMetodo
             // 
             this.lblMetodo.AutoSize = true;
+            this.lblMetodo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblMetodo.Location = new System.Drawing.Point(34, 22);
             this.lblMetodo.Name = "lblMetodo";
             this.lblMetodo.Size = new System.Drawing.Size(46, 13);
@@ -95,6 +96,7 @@ namespace practicaDepreciacion
             this.groupBox1.Controls.Add(this.lblValorResidual);
             this.groupBox1.Controls.Add(this.lblValor);
             this.groupBox1.Controls.Add(this.lblNombre);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(474, 59);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(279, 230);
@@ -207,6 +209,7 @@ namespace practicaDepreciacion
             // 
             // btnUpdate
             // 
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(506, 295);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);

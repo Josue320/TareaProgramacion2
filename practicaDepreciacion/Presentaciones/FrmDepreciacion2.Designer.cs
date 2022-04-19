@@ -241,6 +241,8 @@ namespace practicaDepreciacion
             // btnRecargar
             // 
             this.btnRecargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecargar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnRecargar.Location = new System.Drawing.Point(540, 412);
             this.btnRecargar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnRecargar.Name = "btnRecargar";
@@ -253,6 +255,8 @@ namespace practicaDepreciacion
             // btneliminar
             // 
             this.btneliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btneliminar.Location = new System.Drawing.Point(617, 412);
             this.btneliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btneliminar.Name = "btneliminar";
